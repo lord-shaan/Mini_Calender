@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <style>
+        .container {
+            height: 100vh;
+            width: 100%;
+            /* border:solid red; */
+            background: linear-gradient(#252422, #403d39);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right {
+            height: 200px;
+            width: 150px;
+            /* border:solid green; */
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            padding-top: 80px;
+            padding-left: 30px;
+            background-color: #eb5e28;
+            color: #fffcf2;
+            /* margin-top:50px; */
+            /* margin-right:200px; */
+        }
+
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: larger;
+            font-weight: 500;
+        }
+
+        .left {
+            height: 200px;
+            width: 150px;
+            /* border:solid rgb(229, 8, 199); */
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            padding-top: 80px;
+            padding-left: 30px;
+            background-color: #fffcf2;
+            color: #eb5e28;
+            /* margin-right:200px; */
+        }
+        
+    </style>
+
+    <!-- making a mini calender which displays todays date   -->
+    <div class="container">
+        
+        <div class="left">
+            <h2 id="date">
+                01
+            </h2>
+            <h2 id="day">Sunday</h2>
+        </div>
+        <div class="right">
+            <h2 id="month">January</h2>
+            <h2 id="year">2024</h2>
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    const date = document.getElementById("date");
+    const day = document.getElementById("day");
+    const month = document.getElementById("month");
+    const year = document.getElementById("year");
+    const today = new Date()
+    // console.log(today);
+    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    const allMonths = [January, February, March, April, May, June, July, August, September, October, November, December]
+    date.innerHTML = today.getDate() < 10 ? "0" : "" + today.getDate();
+    day.innerHTML = weekDays[today.getDay()];
+    month.innerHTML = allMonths[today.getMonth()];
+    year.innerHTML = today.getFullYear();
+
+</script>
+
+</html>
